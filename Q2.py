@@ -1,6 +1,10 @@
-def inverter(matriz):
-    det_matriz = matriz[0][0] * matriz[1][1] - matriz[0][1] * matriz[1][0]
+import copy
 
+def inverter(entrada_matriz):
+    matriz = copy.deepcopy(entrada_matriz)
+
+    det_matriz = matriz[0][0] * matriz[1][1] - matriz[0][1] * matriz[1][0]
+    
     matriz[0][0], matriz[1][1] = matriz[1][1], matriz[0][0]
 
     if det_matriz == 0:
@@ -32,7 +36,7 @@ def main():
     matriz[0][1] = b
     matriz[1][0] = c
     matriz[1][1] = d
-
+    
     inverte_matriz = inverter(matriz)
 
     if inverte_matriz == None:

@@ -12,7 +12,7 @@ def define_data(data):
 def campo_ativo(campo):
     if len(campo) == 4:
         campo = campo[:3]
-
+    
     if campo[0] == "S":
         return True
     return False
@@ -36,12 +36,12 @@ def main():
              "Data_de_nascimento":"",
              "Data_de_cadastro":"",
              "Ativo":""}
-
+    
     arq_linhas = le_linhas(arq)
 
     for idx in range(len(arq_linhas)):
         dic_atual = dic_nomes.copy()
-        dados_atuais = separa_string(lista_linhas[idx])
+        dados_atuais = separa_string(arq_linhas[idx])
         dic_atual["CPF"] = dados_atuais[0]
         dic_atual["Nome"] = dados_atuais[1]
         dic_atual["Data_de_nascimento"] = define_data(dados_atuais[2])
